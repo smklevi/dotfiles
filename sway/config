@@ -35,6 +35,7 @@ set $menu wofi --show drun
 # Startup 
 #
  # Programs
+	exec_always gammastep -c ~/.config/gammastep/gammastep.ini &
 	exec_always mako 
 	exec_always lxpolkit 
 	exec waybar 
@@ -120,7 +121,8 @@ input "type:touchpad" {
 
         
     # Screenshot tool
-    bindsym Print             exec ~/.local/bin/screenshot.sh region
+    bindsym Print             exec grimshot copy active && swaymsg "Screenshot taken"
+    #bindsym Print             exec ~/.local/bin/screenshot.sh region
     bindsym Shift+Print       exec ~/.local/bin/screenshot.sh window
     bindsym Ctrl+Print        exec ~/.local/bin/screenshot.sh output
     bindsym Ctrl+Shift+Print  exec ~/.local/bin/screenshot.sh all
@@ -142,7 +144,7 @@ input "type:touchpad" {
 # Custom Shortcuts:
 #
     bindsym Ctrl+F exec thunar
-    bindsym Ctrl+B exec firefox
+    bindsym Ctrl+B exec librewolf
 #
 # Moving around:
 #
